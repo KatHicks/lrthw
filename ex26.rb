@@ -1,48 +1,44 @@
-module Ex25
+# This function will break up words for us.
+def break_words(stuff)
+  words = stuff.split(' ')
+  return words
+end
 
-  # This function will break up words for us.
-  def Ex25.break_words(stuff)
-    words = stuff.split(' ')
-    return words
-  end
+# Sorts the words.
+def sort_words(words)
+  return words.sort
+end
 
-  # Sorts the words.
-  def Ex25.sort_words(words)
-    return words.sort
-  end
+# Prints the first word after shifting it off.
+def print_first_word(words)
+  word = words.shift
+  puts word
+end
 
-  # Prints the first word after shifting it off.
-  def Ex25.print_first_word(words)
-    word = words.shift
-    puts word
-  end
+# Prints the last word after popping it off.
+def print_last_word(words)
+  word = words.pop
+  puts word
+end
 
-  # Prints the last word after popping it off.
-  def Ex25.print_last_word(words)
-    word = words.pop
-    puts word
-  end
+# Takes in a full sentence and returns the sorted words.
+def sort_sentence(sentence)
+  words = break_words(sentence)
+  return sort_words(words)
+end
 
-  # Takes in a full sentence and returns the sorted words.
-  def Ex25.sort_sentence(sentence)
-    words = Ex25.break_words(sentence)
-    return Ex25.sort_words(words)
-  end
+# Prints the first and last words of the sentence.
+def print_first_and_last(sentence)
+  words = break_words(sentence)
+  print_first_word(words)
+  print_last_word(words)
+end
 
-  # Prints the first and last words of the sentence.
-  def Ex25.print_first_and_last(sentence)
-    words = Ex25.break_words(sentence)
-    Ex25.print_first_word(words)
-    Ex25.print_last_word(words)
-  end
-
-  # Sorts the words then prints the first and last one.
-  def Ex25.print_first_and_last_sorted(sentence)
-    words = Ex25.sort_sentence(sentence)
-    Ex25.print_first_word(words)
-    Ex25.print_last_word(words)
-  end
-
+# Sorts the words then prints the first and last one.
+def print_first_and_last_sorted(sentence)
+  words = sort_sentence(sentence)
+  print_first_word(words)
+  print_last_word(words)
 end
 
 puts "Let's practice everything."
@@ -82,11 +78,11 @@ puts "We'd have #{beans} beans, #{jars} jars, and #{crates} crates."
 start_point = start_point / 10
 
 sentence = "All good things come to those who wait."
-words = Ex25.break_words(sentence)
-sorted_words = Ex25.sort_words(words)
-Ex25.print_first_word(words)
-Ex25.print_last_word(words)
-Ex25.print_first_word(sorted_words)
-Ex25.print_last_word(sorted_words)
-Ex25.print_first_and_last(sentence)
-Ex25.print_first_and_last_sorted(sentence)
+words = break_words(sentence)
+sorted_words = sort_words(words)
+print_first_word(words)
+print_last_word(words)
+print_first_word(sorted_words)
+print_last_word(sorted_words)
+print_first_and_last(sentence)
+print_first_and_last_sorted(sentence)
