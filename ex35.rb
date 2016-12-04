@@ -5,6 +5,7 @@ def gold_room
   choice = $stdin.gets.chomp
 
   # this line has a bug, so fix it
+  # alternative: choice.to_i.to_s == choice (from Github Issue)
   if /^(?<num>\d+)$/ =~ choice
     how_much = choice.to_i
   else
